@@ -13,11 +13,8 @@ def bad_request(error):
 
 @app.route('/', methods=['GET'])
 def home():
-    # render todo.html in templates
     return render_template('todo.html')
 
-
-# Endpoints pour Questionnaire
 @app.route('/api/questionnaires', methods=['GET'])
 def get_questionnaires():
     questionnaires = Questionnaire.query.all()
@@ -53,7 +50,6 @@ def delete_questionnaire(id):
     db.session.commit()
     return jsonify({'result': True})
 
-# Endpoints pour Question
 @app.route('/api/questions', methods=['GET'])
 def get_questions():
     questions = Question.query.all()
