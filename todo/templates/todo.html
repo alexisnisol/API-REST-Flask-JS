@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Quiz</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/flex.css') }}"/>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/todo.js') }}"></script>
+  </head>
+  <body>
+ <header>
+ <h1>Quiz</h1>
+ </header>
+
+ <div id='main'>
+
+    <nav id="nav1">
+      <h2>Questionnaires</h2>
+        <input id="button" type="button" value="Recuperer les questionnaires" />
+        <div id="taches">
+        </div>
+    </nav>
+
+    <article>
+      <h2>Editeur de Questionnaires</h2>
+      <section id="tools">
+        <img id="add" src="{{ url_for('static', filename='img/new.png') }}" alt="Nouvelle chose à faire"/>
+        <img id="del" src="{{ url_for('static', filename='img/delete.png') }}" alt="Enlever cette tache"/>
+      </section>
+      <section id="currenttask"> </section>
+    </article>
+ </div>
+ <footer>
+ <h4>©Département Informatique ⚛ IUT d'Orléans</h4>
+ </footer>
+
+  </body>
+</html>

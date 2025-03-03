@@ -1,5 +1,5 @@
 
-from flask import jsonify, abort, make_response, request
+from flask import jsonify, abort, make_response, render_template, request
 from todo.app import app
 from todo.models import Question, Questionnaire, db
 
@@ -11,12 +11,11 @@ def not_found(error):
 def bad_request(error):
     return make_response(jsonify({'error': 'Bad request'}), 400)
 
-@app.route('/api', methods=['GET'])
-def get_api():
-    return jsonify({
-        'questionnaires': '/api/questionnaires',
-        'questions': '/api/questions'
-    })
+@app.route('/', methods=['GET'])
+def home():
+    # render todo.html in templates
+    return render_template('todo.html')
+
 
 # Endpoints pour Questionnaire
 @app.route('/api/questionnaires', methods=['GET'])
